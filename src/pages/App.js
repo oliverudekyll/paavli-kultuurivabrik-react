@@ -1,5 +1,7 @@
+import { Title } from "./../assets/components/Title";
 import { useRef } from "react";
 import { useMouse } from "react-use";
+import { motion } from "framer-motion";
 
 import "../assets/css/_reset.css";
 import "../assets/css/fonts.css";
@@ -16,15 +18,7 @@ function App() {
   return (
     <div ref={ref}>
       <Header />
-      <div className="hero__h1-container">
-        <span className="h1__logo-container">
-          <img
-            className="h1__logo"
-            src="../assets/images/paavli-logo.svg"
-          ></img>
-        </span>
-        <h1 className="hero__h1">Paavli Kultuurivabrik</h1>
-      </div>
+      <Title />
       <HeroBackground docX={docX} docY={docY} />
       <Footer />
     </div>

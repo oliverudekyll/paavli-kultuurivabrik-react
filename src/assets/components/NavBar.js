@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import Button from "./Button.js";
 
 const navItems = [
