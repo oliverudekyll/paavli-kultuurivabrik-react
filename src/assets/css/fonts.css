@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Ladna Sans";
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: auto;
+  src: url("../fonts/LadnaFullVariable.woff") format("woff"),
+    url("../fonts/LadnaFullVariable.woff2") format("woff2");
+}

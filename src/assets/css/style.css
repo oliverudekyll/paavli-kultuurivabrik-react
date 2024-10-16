@@ -1,0 +1,105 @@
+:root {
+  --color-primary: #f83844;
+
+  --font-ladna: "Ladna Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --transition-hover: 150ms ease-in-out;
+
+  --unit-padding: 2.5rem;
+  --unit-column-gap: 0.3125rem;
+}
+
+.hero__background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.hero__background-img {
+  width: 120%;
+  height: 120%;
+
+  object-fit: cover;
+}
+
+.hero__h1 {
+  position: fixed;
+
+  font-family: var(--font-ladna);
+  font-size: 6.0625rem;
+  font-weight: 900;
+  letter-spacing: -0.2425rem;
+  text-align: center;
+  white-space: nowrap;
+  color: white;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: var(--unit-padding);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__socials,
+.header__languages {
+  display: flex;
+  gap: var(--unit-column-gap);
+}
+
+.hero__footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: var(--unit-padding);
+
+  display: flex;
+  justify-content: center;
+}
+
+.footer__nav-bar {
+  position: relative;
+  max-width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: var(--unit-column-gap);
+}
+
+.button {
+  padding: var(--unit-column-gap) 0.625rem;
+  border-radius: 1.25rem;
+
+  font-family: var(--font-ladna);
+  font-size: 1.0833333333rem;
+  font-weight: 500;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.0325rem;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+
+  background-color: var(--color-primary);
+  transition: var(--transition-hover);
+}
+
+.button:hover {
+  transform: translateY(-25%);
+}
