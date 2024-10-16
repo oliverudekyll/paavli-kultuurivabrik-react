@@ -1,14 +1,11 @@
 function HeroBackground({ docX, docY }) {
-  const mouseX = -docX / window.innerWidth;
-  const mouseY = -docY / window.innerHeight;
+  const mouseX = (-docX / window.innerWidth) * 0;
+  const mouseY = (-docY / window.innerHeight) * 0;
   return (
-    <span className="hero__background">
-      <img
-        style={{ transform: `translate(${mouseX}%, ${mouseY}%)` }}
-        className="hero__background-img"
-        src="../assets/images/hero-image.webp"
-      ></img>
-    </span>
+    <span
+      style={{ backgroundPosition: `${mouseX}px ${mouseY}px` }}
+      className="hero__background"
+    ></span>
   );
 }
 
