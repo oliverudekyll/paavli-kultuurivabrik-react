@@ -16,7 +16,15 @@ function App() {
   return (
     <div ref={ref}>
       <Header />
-      <h1 className="hero__h1">Paavli Kultuurivabrik</h1>
+      <div className="hero__h1-container">
+        <span className="h1__logo-container">
+          <img
+            className="h1__logo"
+            src="../assets/images/paavli-logo.svg"
+          ></img>
+        </span>
+        <h1 className="hero__h1">Paavli Kultuurivabrik</h1>
+      </div>
       <HeroBackground docX={docX} docY={docY} />
       <Footer />
     </div>
