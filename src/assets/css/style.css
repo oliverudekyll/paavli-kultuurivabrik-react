@@ -1,12 +1,15 @@
 :root {
   --color-primary: #f83844;
+  --color-hover: hsl(356, 93%, 40%);
 
   --font-ladna: "Ladna Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --transition-hover: 150ms ease-in-out;
 
   --unit-padding: 2.5rem;
-  --unit-column-gap: 0.3125rem;
+  --unit-small: 0.425rem;
+  --unit-medium: 1rem;
+  --unit-font-size-body: 1.5rem;
 }
 
 .hero__background {
@@ -65,7 +68,12 @@
 .header__socials,
 .header__languages {
   display: flex;
-  gap: var(--unit-column-gap);
+  gap: var(--unit-small);
+}
+
+.socials__icon {
+  height: 1rem;
+  height: 1.25rem;
 }
 
 .hero__footer {
@@ -81,21 +89,22 @@
 
 .footer__nav-bar {
   position: relative;
-  max-width: 80ch;
+  max-width: 130ch;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
-  gap: var(--unit-column-gap);
+  gap: var(--unit-small);
 }
 
 .button {
-  padding: var(--unit-column-gap) 0.625rem;
+  padding: var(--unit-small) var(--unit-medium);
   border-radius: 1.25rem;
 
   font-family: var(--font-ladna);
-  font-size: 1.0833333333rem;
+  font-size: var(--unit-font-size-body);
+  line-height: 1;
   font-weight: 500;
   font-style: normal;
   font-weight: 500;
@@ -109,5 +118,6 @@
 }
 
 .button:hover {
-  transform: translateY(-25%);
+  transform: translateY(-10%);
+  background-color: var(--color-hover);
 }

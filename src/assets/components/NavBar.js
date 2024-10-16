@@ -11,6 +11,7 @@ const navItems = [
   { value: "Väärtused", href: "#", ariaLabel: "" },
   { value: "Paavli.CLUB & .LIVE", href: "#", ariaLabel: "" },
   { value: "Dreamscape", href: "#", ariaLabel: "" },
+  { value: "Damn.Loud", href: "#", ariaLabel: "" },
   { value: "Liveurope", href: "#", ariaLabel: "" },
   { value: "Partnerid", href: "#", ariaLabel: "" },
 ];

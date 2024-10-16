@@ -4,8 +4,26 @@ function Header() {
   return (
     <header className="header">
       <div className="header__socials">
-        <Button value={"Instagram"} href={"#"} ariaLabel={""} />
-        <Button value={"Facebook"} href={"#"} ariaLabel={""} />
+        <Button
+          value={
+            <img
+              className="socials__icon"
+              src="../assets/images/instagram-icon.svg"
+            ></img>
+          }
+          href={"#"}
+          ariaLabel={""}
+        />
+        <Button
+          value={
+            <img
+              className="socials__icon"
+              src="../assets/images/facebook-icon.svg"
+            ></img>
+          }
+          href={"#"}
+          ariaLabel={""}
+        />
       </div>
       <div className="header__languages">
         <Button value={"en"} href={"#"} ariaLabel={""} />
