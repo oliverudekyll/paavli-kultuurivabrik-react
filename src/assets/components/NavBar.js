@@ -1,14 +1,16 @@
 import React from "react";
-
 import {
-  useAnimate,
-  stagger,
   motion,
-  animate,
+  easeInOut,
+  circInOut,
+  backInOut,
   AnimatePresence,
+  spring,
 } from "framer-motion";
-
 import Button from "./Button.js";
+
+const easeInOutQuart = [0.77, 0.0, 0.175, 1.0];
+const easeInOutCubic = [0.645, 0.045, 0.355, 1.0];
 
 const navItems = [
   { value: "Programm", href: "#", ariaLabel: "" },
@@ -26,35 +28,35 @@ const navItems = [
   { value: "Partnerid", href: "#", ariaLabel: "" },
 ];
 
-const MotionButton = motion(
-  React.forwardRef((props, ref) => <Button {...props} ref={ref} />)
-);
+const MotionButton = motion(Button);
 
 const containerVariants = {
-  hidden: { opacity: 1 },
+  hidden: { opacity: 0, y: "100%" },
   show: {
     opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.3, // Increased from 0.1 to 0.2
-      delayChildren: 0.3, // Added a delay before children start animating
+      duration: 0.5,
+      delay: 2,
+      /* delayChildren: 1.75, */
+      /* staggerChildren: 0.025, */
     },
   },
 };
 
 const itemVariants = {
-  hidden: { y: "100%", opacity: 0 },
+  from: "center",
+  hidden: { opacity: 1 },
   show: {
-    y: "0%",
     opacity: 1,
     transition: {
-      duration: 1, // Added duration to make each animation more noticeable
+      easeInOut,
+      spring,
     },
   },
 };
 
 function NavBar() {
-  console.log("Rendering NavBar"); // Debug log
-
   return (
     <AnimatePresence>
       <motion.nav
@@ -64,19 +66,15 @@ function NavBar() {
         initial="hidden"
         animate="show"
       >
-        {navItems.map(({ value, href, ariaLabel }, index) => {
-          console.log(`Rendering item ${index}: ${value}`); // Debug log
-          return (
-            <MotionButton
-              key={value.split(" ").join("-").toLowerCase()}
-              value={value}
-              href={href}
-              ariaLabel={ariaLabel}
-              variants={itemVariants}
-              custom={index}
-            />
-          );
-        })}
+        {navItems.map(({ value, href, ariaLabel }, index) => (
+          <MotionButton
+            key={value.split(" ").join("-").toLowerCase()}
+            value={value}
+            href={href}
+            ariaLabel={ariaLabel}
+            /* variants={itemVariants} */
+          />
+        ))}
       </motion.nav>
     </AnimatePresence>
   );

@@ -1,9 +1,21 @@
-function Button({ value, href, ariaLabel }) {
+import React from "react";
+import { motion, easeInOut, circInOut, backInOut } from "framer-motion";
+
+const easeInOutQuart = [0.77, 0.0, 0.175, 1.0];
+const easeInOutCubic = [0.645, 0.045, 0.355, 1.0];
+
+const Button = React.forwardRef(({ value, href, ariaLabel, ...props }, ref) => {
   return (
-    <a className="button" href={href} ariaLabel={ariaLabel}>
+    <motion.a
+      ref={ref}
+      className="button"
+      href={href}
+      aria-label={ariaLabel}
+      {...props}
+    >
       {value}
-    </a>
+    </motion.a>
   );
-}
+});
 
 export default Button;

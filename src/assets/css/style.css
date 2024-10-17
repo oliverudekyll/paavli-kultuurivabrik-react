@@ -69,6 +69,10 @@
   object-fit: contain;
 }
 
+.h1__logo * {
+  width: unset !important;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -131,6 +135,7 @@
 
   background-color: var(--color-primary);
   transition: var(--transition-hover);
+  overflow: hidden;
 }
 
 .button:hover {
