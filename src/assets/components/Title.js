@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, easeInOut, circInOut, backInOut } from "framer-motion";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 export function Title() {
   const easeInOutQuart = [0.77, 0.0, 0.175, 1.0];
   const easeInOutCubic = [0.645, 0.045, 0.355, 1.0];
+
+  const lottieRef = useRef(null);
+
+  useEffect(() => {
+    if (lottieRef.current) {
+      lottieRef.current.play();
+    }
+  }, []);
 
   return (
     <div className="hero__h1-container">
@@ -24,22 +32,24 @@ export function Title() {
         <motion.div
           className="h1__logo-wrapper"
           initial={{
-            y: "-100%",
-            opacity: 0,
+            y: "-200%",
+            opacity: 1,
           }}
           animate={{
             y: "0%",
             opacity: 1,
           }}
           transition={{
-            duration: 0.75,
+            duration: 0.5,
             ease: easeInOutCubic,
           }}
         >
-          <img
+          <DotLottieReact
             className="h1__logo"
-            src="../assets/images/paavli-logo.svg"
-          ></img>
+            src="../assets/images/paavli-logo.lottie"
+            autoplay
+            lottieRef={lottieRef}
+          />
         </motion.div>
         <motion.h1
           initial={{
@@ -52,7 +62,7 @@ export function Title() {
           }}
           transition={{
             duration: 1,
-            delay: 0.75,
+            delay: 1,
             ease: easeInOutQuart,
           }}
           className="hero__h1"
