@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, easeInOut, circInOut, backInOut } from "framer-motion";
-export function Title({}) {
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+export function Title() {
   const easeInOutQuart = [0.77, 0.0, 0.175, 1.0];
   const easeInOutCubic = [0.645, 0.045, 0.355, 1.0];
 
